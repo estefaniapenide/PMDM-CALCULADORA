@@ -12,38 +12,41 @@ class MainActivity : AppCompatActivity() {
     //Calculadora
     var numero = 0.0
     var resultado = 0.0
-    var total=0.0
-    var signo=""
+    var total = 0.0
+    var signo: String? = null
 
     fun suma(resultado: Double, numero: Double): Double {
-        return resultado + numero }
+        return resultado + numero
+    }
 
     fun resta(resultado: Double, numero: Double): Double {
-        return resultado - numero}
+        return resultado - numero
+    }
 
     fun mult(resultado: Double, numero: Double): Double {
-        return resultado * numero}
+        return resultado * numero
+    }
 
     fun div(resultado: Double, numero: Double): Double {
-        return resultado / numero}
+        return resultado / numero
+    }
 
-    fun operacion(resultado: Double, numero: Double, signo: String): Double {
+    fun operacion(resultado: Double, numero: Double, signo: String?): Double {
         when (signo) {
             "+" -> total = suma(resultado, numero)
             "-" -> total = resta(resultado, numero)
             "x" -> total = mult(resultado, numero)
             "/" -> total = div(resultado, numero)
             else -> {
-                total=34404.0
+                total = 444444.0
             }
         }
         return total
     }
 
-    fun reasignacion(total:Double){
-        resultado=total
+    fun reasignacion(total: Double) {
+        resultado = total
     }
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,25 +57,33 @@ class MainActivity : AppCompatActivity() {
 
         //Mirar esto para no tener que inicializarla así y poder usar el if de escribir número (ahora no me funciona)
         binding.tvNumero.text=""
-        var texto = binding.tvNumero.getText().toString()
+        var texto=binding.tvNumero.getText().toString()
+        //Con esto funciona y desaparece el cero(si es la unica variable nullable, si tambien adapto signo, operación y resultado me sale null). Ver cómo adaptar el if de escribir número
+        //var texto:String?=null
+        //texto.plus(binding.tvNumero.getText().toString())
         var textoSegundoPlano=""
 
         var signoNuevo=""
 
-        fun escribirNumero(digito:String): String{
+        fun escribirNumero(digito:String){
             if (texto.equals("0")){
                 binding.tvNumero.text=""
             }
             texto+=digito
             binding.tvNumero.text=texto
-
-            return texto
         }
 
-        fun elegirOperacion(operacion:String){
-            texto=operacion
-            binding.tvNumero.text=texto
+        fun elegirOperacion(operacion:String?){
             signo=operacion
+            //Con signo y operación nulables funcionan las cuentas. Sin eso se queda enganchado en el +
+            //texto=operacion
+            //binding.tvNumero.text=texto
+        }
+
+        //Incluso haciendo esta función a parte NO ME FUNCIONA!!! Y SI LA USO TODO SERAN SUMAS
+        fun textoOperacion(simbolo:String){
+            texto+=simbolo
+            binding.tvNumero.text=texto
         }
 
         fun igual(){
@@ -90,7 +101,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        fun pasarTextoSegundoPlano(texto:String){
+        fun pasarTextoSegundoPlano(){
             textoSegundoPlano+=texto
             binding.tvOperacion.text=textoSegundoPlano
         }
@@ -104,60 +115,32 @@ class MainActivity : AppCompatActivity() {
         fun reinicio(){
             resultado=0.0
             numero=0.0
-            texto=""
-            textoSegundoPlano=""
-            binding.tvNumero.text=texto
-            binding.tvOperacion.text=textoSegundoPlano
+            signo=""
+            binding.tvNumero.text=""
+            binding.tvOperacion.text=""
+            texto=binding.tvNumero.text.toString()
+            textoSegundoPlano=binding.tvOperacion.text.toString()
+
         }
 
 
-        binding.b0.setOnClickListener{
-            escribirNumero("0")
-        }
-
-        binding.b1.setOnClickListener{
-            escribirNumero("1")
-        }
-
-        binding.b2.setOnClickListener{
-            escribirNumero("2")
-        }
-
-        binding.b3.setOnClickListener{
-            escribirNumero("3")
-        }
-
-        binding.b4.setOnClickListener{
-            escribirNumero("4")
-        }
-
-        binding.b5.setOnClickListener{
-            escribirNumero("5")
-        }
-
-        binding.b6.setOnClickListener{
-            escribirNumero("6")
-        }
-
-        binding.b7.setOnClickListener{
-            escribirNumero("7")
-        }
-
-        binding.b8.setOnClickListener{
-            escribirNumero("8")
-        }
-
-        binding.b9.setOnClickListener{
-            escribirNumero("9")
-        }
+        binding.b0.setOnClickListener{ escribirNumero("0") }
+        binding.b1.setOnClickListener{ escribirNumero("1") }
+        binding.b2.setOnClickListener{ escribirNumero("2") }
+        binding.b3.setOnClickListener{ escribirNumero("3") }
+        binding.b4.setOnClickListener{ escribirNumero("4") }
+        binding.b5.setOnClickListener{ escribirNumero("5") }
+        binding.b6.setOnClickListener{ escribirNumero("6") }
+        binding.b7.setOnClickListener{ escribirNumero("7") }
+        binding.b8.setOnClickListener{ escribirNumero("8") }
+        binding.b9.setOnClickListener{ escribirNumero("9") }
 
         binding.bmasmenos.setOnClickListener{}
-        binding.bcoma.setOnClickListener{
-            escribirNumero(".")
-        }
+
+        binding.bcoma.setOnClickListener{ escribirNumero(".") }
 
         binding.bigual.setOnClickListener{
-            pasarTextoSegundoPlano(texto)
+            pasarTextoSegundoPlano()
             guardarNumero()
             igual()
         }
@@ -165,30 +148,34 @@ class MainActivity : AppCompatActivity() {
 
         binding.bmas.setOnClickListener{
             guardarNumero()
-            pasarTextoSegundoPlano(texto)
+            pasarTextoSegundoPlano()
             borrarTexto()
             elegirOperacion("+")
+            //textoOperacion("+")
         }
 
         binding.bmenos.setOnClickListener{
             guardarNumero()
-            pasarTextoSegundoPlano(texto)
+            pasarTextoSegundoPlano()
             borrarTexto()
             elegirOperacion("-")
+           //textoOperacion("-")
         }
 
         binding.bmult.setOnClickListener{
             guardarNumero()
-            pasarTextoSegundoPlano(texto)
+            pasarTextoSegundoPlano()
             borrarTexto()
             elegirOperacion("x")
+            //textoOperacion("x")
         }
 
         binding.bdiv.setOnClickListener{
             guardarNumero()
-            pasarTextoSegundoPlano(texto)
+            pasarTextoSegundoPlano()
             borrarTexto()
             elegirOperacion("/")
+            //textoOperacion("/")
         }
 
         binding.braiz2.setOnClickListener{}
