@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+
+    android:background="@color/purple_700">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hgl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hgl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.30" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hgl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.31"/>
+
+    <TextView
+        android:id="@+id/tvOperacion"
+        style="@style/Pantalla"
+        android:gravity="center|right"
+        android:text=""
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/hgl1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNumero"
+        style="@style/Pantalla"
+        android:gravity="bottom|right"
+        android:text="0"
+        android:textSize="70sp"
+        app:layout_constraintBottom_toTopOf="@+id/hgl2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hgl1" />
+
+    <TextView
+        android:id="@+id/b1"
+        style="@style/Botones_claros"
+        android:text="1"
+        app:layout_constraintBottom_toTopOf="@+id/bmasmenos"
+        app:layout_constraintEnd_toStartOf="@+id/b2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b4" />
+
+    <TextView
+        android:id="@+id/b2"
+        style="@style/Botones_claros"
+        android:text="2"
+        app:layout_constraintBottom_toTopOf="@+id/b0"
+        app:layout_constraintEnd_toStartOf="@+id/b3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/b1"
+        app:layout_constraintTop_toBottomOf="@+id/b5" />
+
+    <TextView
+        android:id="@+id/b3"
+        style="@style/Botones_claros"
+        android:text="3"
+        app:layout_constraintBottom_toTopOf="@+id/bcoma"
+        app:layout_constraintEnd_toStartOf="@+id/bmas"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/b2"
+        app:layout_constraintTop_toBottomOf="@+id/b6" />
+
+    <TextView
+        android:id="@+id/b4"
+        style="@style/Botones_claros"
+        android:text="4"
+        app:layout_constraintBottom_toTopOf="@+id/b1"
+        app:layout_constraintEnd_toStartOf="@+id/b5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b7" />
+
+    <TextView
+        android:id="@+id/b5"
+        style="@style/Botones_claros"
+        android:text="5"
+        app:layout_constraintBottom_toTopOf="@+id/b2"
+        app:layout_constraintEnd_toStartOf="@+id/b6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/b4"
+        app:layout_constraintTop_toBottomOf="@+id/b8" />
+
+    <TextView
+        android:id="@+id/b6"
+        style="@style/Botones_claros"
+        android:text="6"
+        app:layout_constraintBottom_toTopOf="@+id/b3"
+        app:layout_constraintEnd_toStartOf="@+id/bmenos"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/b5"
+        app:layout_constraintTop_toBottomOf="@+id/b9" />
+
+    <TextView
+        android:id="@+id/b7"
+        style="@style/Botones_claros"
+        android:text="7"
+        app:layout_constraintBottom_toTopOf="@+id/b4"
+        app:layout_constraintEnd_toStartOf="@+id/b8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/binverso" />
+
+    <TextView
+        android:id="@+id/b8"
+        style="@style/Botones_claros"
+        android:text="8"
+        app:layout_constraintBottom_toTopOf="@+id/b5"
+        app:layout_constraintEnd_toStartOf="@+id/b9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/b7"
+        app:layout_constraintTop_toBottomOf="@+id/bpotencia2" />
+
+    <TextView
+        android:id="@+id/b9"
+        style="@style/Botones_claros"
+        android:text="9"
+        app:layout_constraintBottom_toTopOf="@+id/b6"
+        app:layout_constraintEnd_toStartOf="@+id/bmult"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/b8"
+        app:layout_constraintTop_toBottomOf="@+id/braiz2" />
+
+    <TextView
+        android:id="@+id/b0"
+        style="@style/Botones_claros"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bcoma"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bmasmenos"
+        app:layout_constraintTop_toBottomOf="@+id/b2" />
+
+    <TextView
+        android:id="@+id/bmasmenos"
+        style="@style/Botones_claros"
+        android:text="+/-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/b0"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b1" />
+
+    <TextView
+        android:id="@+id/bcoma"
+        style="@style/Botones_claros"
+        android:text=","
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bigual"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/b0"
+        app:layout_constraintTop_toBottomOf="@+id/b3" />
+
+    <TextView
+        android:id="@+id/bigual"
+        style="@style/Botones_oscuros"
+        android:text="="
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bcoma"
+        app:layout_constraintTop_toBottomOf="@+id/bmas" />
+
+    <TextView
+        android:id="@+id/bmas"
+        style="@style/Botones_oscuros"
+        android:text="+"
+        app:layout_constraintBottom_toTopOf="@+id/bigual"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/b3"
+        app:layout_constraintTop_toBottomOf="@+id/bmenos" />
+
+    <TextView
+        android:id="@+id/bmenos"
+        style="@style/Botones_oscuros"
+        android:text="-"
+        app:layout_constraintBottom_toTopOf="@+id/bmas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/b6"
+        app:layout_constraintTop_toBottomOf="@+id/bmult" />
+
+    <TextView
+        android:id="@+id/bmult"
+        style="@style/Botones_oscuros"
+        android:text="x"
+        app:layout_constraintBottom_toTopOf="@+id/bmenos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/b9"
+        app:layout_constraintTop_toBottomOf="@+id/bdiv" />
+
+    <TextView
+        android:id="@+id/bdiv"
+        style="@style/Botones_oscuros"
+        android:text="\u00F7"
+        app:layout_constraintBottom_toTopOf="@+id/bmult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/braiz2"
+        app:layout_constraintTop_toBottomOf="@+id/bdel"/>
+
+    <TextView
+        android:id="@+id/braiz2"
+        style="@style/Botones_oscuros"
+        android:text="\u221A"
+        app:layout_constraintBottom_toTopOf="@+id/b9"
+        app:layout_constraintEnd_toStartOf="@+id/bdiv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bpotencia2"
+        app:layout_constraintTop_toBottomOf="@+id/bc" />
+
+    <TextView
+        android:id="@+id/bpotencia2"
+        style="@style/Botones_oscuros"
+        android:text="x\u00B2"
+        app:layout_constraintBottom_toTopOf="@+id/b8"
+        app:layout_constraintEnd_toStartOf="@+id/braiz2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/binverso"
+        app:layout_constraintTop_toBottomOf="@+id/bce" />
+
+    <TextView
+        android:id="@+id/binverso"
+        style="@style/Botones_oscuros"
+        android:text="1/x"
+        app:layout_constraintBottom_toTopOf="@+id/b7"
+        app:layout_constraintEnd_toStartOf="@+id/bpotencia2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bporcentaje" />
+
+    <TextView
+        android:id="@+id/bdel"
+        style="@style/Botones_oscuros"
+        android:text="\u232B"
+        app:layout_constraintBottom_toTopOf="@+id/bdiv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bc"
+        app:layout_constraintTop_toBottomOf="@+id/hgl3" />
+
+    <TextView
+        android:id="@+id/bc"
+        style="@style/Botones_oscuros"
+        android:text="C"
+        app:layout_constraintBottom_toTopOf="@+id/braiz2"
+        app:layout_constraintEnd_toStartOf="@+id/bdel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bce"
+        app:layout_constraintTop_toBottomOf="@+id/hgl3" />
+
+    <TextView
+        android:id="@+id/bce"
+        style="@style/Botones_oscuros"
+        android:text="CE"
+        app:layout_constraintBottom_toTopOf="@+id/bpotencia2"
+        app:layout_constraintEnd_toStartOf="@+id/bc"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/bporcentaje"
+        app:layout_constraintTop_toBottomOf="@+id/hgl3" />
+
+    <TextView
+        android:id="@+id/bporcentaje"
+        style="@style/Botones_oscuros"
+        android:text="%"
+        app:layout_constraintBottom_toTopOf="@+id/binverso"
+        app:layout_constraintEnd_toStartOf="@+id/bce"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hgl3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
