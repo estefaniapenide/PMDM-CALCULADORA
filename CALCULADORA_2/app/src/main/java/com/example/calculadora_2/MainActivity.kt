@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity() {
             borrarTexto()
             elegirOperacion("+")
             //Creía que esto lo arrgalaba pero no. Al meterle esto TODO SON SUMAS
-            /*pasarTextoSegundoPlano()
+           /* pasarTextoSegundoPlano()
             borrarTexto()*/
         }
 
@@ -144,7 +144,7 @@ class MainActivity : AppCompatActivity() {
             borrarTexto()
             elegirOperacion("-")
             //Creía que esto lo arrgalaba pero no
-           /* pasarTextoSegundoPlano()
+            /*pasarTextoSegundoPlano()
             borrarTexto()*/
         }
 
@@ -154,7 +154,7 @@ class MainActivity : AppCompatActivity() {
             borrarTexto()
             elegirOperacion("x")
             //Creía que esto lo arrgalaba pero no
-           /* pasarTextoSegundoPlano()
+           /*pasarTextoSegundoPlano()
             borrarTexto()*/
         }
 
@@ -165,7 +165,7 @@ class MainActivity : AppCompatActivity() {
             elegirOperacion("/")
             //Creía que esto lo arrgalaba pero no
             /*pasarTextoSegundoPlano()
-            borrarTexto()*/
+            borrarTexto()+/
         }
 
         binding.braiz2.setOnClickListener{}

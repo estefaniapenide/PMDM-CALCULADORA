@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     var numero = 0.0
     var resultado = 0.0
     var total = 0.0
-    var signo: String? = null
+    var signo="+"
 
     fun suma(resultado: Double, numero: Double): Double {
         return resultado + numero
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         return resultado / numero
     }
 
-    fun operacion(resultado: Double, numero: Double, signo: String?): Double {
+    fun operacion(resultado: Double, numero: Double, signo: String): Double {
         when (signo) {
             "+" -> total = suma(resultado, numero)
             "-" -> total = resta(resultado, numero)
@@ -73,11 +73,11 @@ class MainActivity : AppCompatActivity() {
             binding.tvNumero.text=texto
         }
 
-        fun elegirOperacion(operacion:String?){
+        fun elegirOperacion(operacion:String){
             signo=operacion
             //Con signo y operación nulables funcionan las cuentas. Sin eso se queda enganchado en el +
-            //texto=operacion
-            //binding.tvNumero.text=texto
+            texto=operacion
+            binding.tvNumero.text=texto
         }
 
         //Incluso haciendo esta función a parte NO ME FUNCIONA!!! Y SI LA USO TODO SERAN SUMAS
@@ -151,6 +151,8 @@ class MainActivity : AppCompatActivity() {
             pasarTextoSegundoPlano()
             borrarTexto()
             elegirOperacion("+")
+            pasarTextoSegundoPlano()
+            borrarTexto()
             //textoOperacion("+")
         }
 
@@ -159,6 +161,8 @@ class MainActivity : AppCompatActivity() {
             pasarTextoSegundoPlano()
             borrarTexto()
             elegirOperacion("-")
+            pasarTextoSegundoPlano()
+            borrarTexto()
            //textoOperacion("-")
         }
 
@@ -167,6 +171,8 @@ class MainActivity : AppCompatActivity() {
             pasarTextoSegundoPlano()
             borrarTexto()
             elegirOperacion("x")
+            pasarTextoSegundoPlano()
+            borrarTexto()
             //textoOperacion("x")
         }
 
@@ -175,6 +181,8 @@ class MainActivity : AppCompatActivity() {
             pasarTextoSegundoPlano()
             borrarTexto()
             elegirOperacion("/")
+            pasarTextoSegundoPlano()
+            borrarTexto()
             //textoOperacion("/")
         }
 
