@@ -61,12 +61,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         fun escribirNumero(digito:String){
-            //Añadí esto para que cuando se escriba un número tras un signo, el signo pase a segundo plano y se empiece un número nuevo en la principal
-            //Pero no funciona!!
-            /*if(binding.tvNumero.text.equals("[+-x/]{1}".toRegex())){
-                pasarTextoSegundoPlano()
-                borrarTexto()
-            }*/
             if (binding.tvNumero.getText().toString().equals("0")){
                 binding.tvNumero.setText("")
             }
@@ -74,9 +68,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         fun elegirOperacion(operacion:String){
-            //Falla en la multiplicación y en la división creo que porque coje como signo el signo mas el número que viene despues?? o algo asi
-            //Mirar bien!!
-            signo.replace("[+-x/]{1}".toRegex(),operacion)
+            //Igual está mal la expresión regular y por eso no funciona y tengo que hacerlo con resasignación (con reasignación funciona bien)
+            //signo.replace("[+-x/]{1}".toRegex(),operacion)
+            signo=operacion
             binding.tvNumero.setText(operacion)
         }
 
@@ -133,9 +127,13 @@ class MainActivity : AppCompatActivity() {
             pasarTextoSegundoPlano()
             borrarTexto()
             elegirOperacion("+")
-            //Creía que esto lo arrgalaba pero no. Al meterle esto TODO SON SUMAS
-           /* pasarTextoSegundoPlano()
-            borrarTexto()*/
+            pasarTextoSegundoPlano()
+            borrarTexto()
+            //Esto funciona si no se mezclan tipos de operaciones. Darle una vuelta
+            if(numero!=0.0){
+                reasignacion(operacion(resultado,numero,signo))
+                numero=0.0
+            }
         }
 
         binding.bmenos.setOnClickListener{
@@ -143,9 +141,13 @@ class MainActivity : AppCompatActivity() {
             pasarTextoSegundoPlano()
             borrarTexto()
             elegirOperacion("-")
-            //Creía que esto lo arrgalaba pero no
-            /*pasarTextoSegundoPlano()
-            borrarTexto()*/
+            pasarTextoSegundoPlano()
+            borrarTexto()
+            //Esto funciona si no se mezclan tipos de operaciones. Darle una vuelta
+            if(numero!=0.0){
+                reasignacion(operacion(resultado,numero,signo))
+                numero=0.0
+            }
         }
 
         binding.bmult.setOnClickListener{
@@ -153,9 +155,13 @@ class MainActivity : AppCompatActivity() {
             pasarTextoSegundoPlano()
             borrarTexto()
             elegirOperacion("x")
-            //Creía que esto lo arrgalaba pero no
-           /*pasarTextoSegundoPlano()
-            borrarTexto()*/
+            pasarTextoSegundoPlano()
+            borrarTexto()
+            //Esto funciona si no se mezclan tipos de operaciones. Darle una vuelta
+            if(numero!=0.0){
+                reasignacion(operacion(resultado,numero,signo))
+                numero=0.0
+            }
         }
 
         binding.bdiv.setOnClickListener{
@@ -163,9 +169,13 @@ class MainActivity : AppCompatActivity() {
             pasarTextoSegundoPlano()
             borrarTexto()
             elegirOperacion("/")
-            //Creía que esto lo arrgalaba pero no
-            /*pasarTextoSegundoPlano()
-            borrarTexto()+/
+            pasarTextoSegundoPlano()
+            borrarTexto()
+            //Esto funciona si no se mezclan tipos de operaciones. Darle una vuelta
+            if(numero!=0.0){
+                reasignacion(operacion(resultado,numero,signo))
+                numero=0.0
+            }
         }
 
         binding.braiz2.setOnClickListener{}
