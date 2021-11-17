@@ -76,8 +76,13 @@ class MainActivity : AppCompatActivity() {
 
 
         fun igual(){
+            /*if(numero!=0.0){
+                reasignacion(operacion(resultado,numero,signo))
+                numero=0.0
+            }*/
             reasignacion(operacion(resultado,numero,signo))
             binding.tvNumero.setText("= $resultado")
+            numero=0.0
         }
 
 
@@ -134,6 +139,7 @@ class MainActivity : AppCompatActivity() {
                 reasignacion(operacion(resultado,numero,signo))
                 numero=0.0
             }
+
         }
 
         binding.bmenos.setOnClickListener{
@@ -148,6 +154,7 @@ class MainActivity : AppCompatActivity() {
                 reasignacion(operacion(resultado,numero,signo))
                 numero=0.0
             }
+
         }
 
         binding.bmult.setOnClickListener{
@@ -162,6 +169,7 @@ class MainActivity : AppCompatActivity() {
                 reasignacion(operacion(resultado,numero,signo))
                 numero=0.0
             }
+
         }
 
         binding.bdiv.setOnClickListener{
@@ -176,6 +184,7 @@ class MainActivity : AppCompatActivity() {
                 reasignacion(operacion(resultado,numero,signo))
                 numero=0.0
             }
+
         }
 
         binding.braiz2.setOnClickListener{}
